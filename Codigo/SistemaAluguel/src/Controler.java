@@ -1,6 +1,14 @@
 import java.io.IOException;
 import java.util.Scanner;
 
+import Cliente.CadastroCliente;
+import Cliente.Cliente;
+import Cliente.ListaCliente;
+import Cliente.LoginCliente;
+import Funcionario.Funcionario;
+import Funcionario.ListaFuncionario;
+import Funcionario.LoginFuncionario;
+
 public class Controler {
 
     private Cliente user;
@@ -8,20 +16,15 @@ public class Controler {
     private ListaCliente listCliente;
     private ListaFuncionario listFuncs;
 
-    public void Controler() throws InterruptedException, IOException {
+    public Controler() {
         this.listCliente = new ListaCliente(); // Converter para carregamento de usuarios via arquivo
         this.start();
     }
 
-    public void start() throws InterruptedException, IOException {
+    public void start() {
         Scanner s = new Scanner(System.in);
         int option;
         do {
-            // limpeza de cmd
-            if (System.getProperty("os.name").contains("Windows"))
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            else
-                Runtime.getRuntime().exec("clear");
 
             System.out.println("Qual sistema deseja acessar?");
             System.out.println("1 - Sou um cliente");

@@ -1,3 +1,5 @@
+package Funcionario;
+
 import java.util.Scanner;
 
 public class LoginFuncionario {
@@ -12,6 +14,6 @@ public class LoginFuncionario {
             return func;
         else
             System.out.println("Usuario ou senha incorretos");
-        return LoginFuncionario.login(lista);
+        return null;
     }
 }

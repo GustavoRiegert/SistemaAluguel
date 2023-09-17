@@ -1,3 +1,5 @@
+package Cliente;
+
 import java.util.Scanner;
 
 public class CadastroCliente {
@@ -9,6 +11,7 @@ public class CadastroCliente {
         String password = s.nextLine();
 
         Cliente c = new Cliente(user, password);
+        s.close();
         return c;
     }
 }

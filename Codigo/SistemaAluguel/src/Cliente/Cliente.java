@@ -1,3 +1,5 @@
+package Cliente;
+
 public class Cliente {
     private String senha, usuario;
 

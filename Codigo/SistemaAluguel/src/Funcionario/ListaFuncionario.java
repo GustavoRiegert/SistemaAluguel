@@ -1,3 +1,5 @@
+package Funcionario;
+
 import java.util.ArrayList;
 
 public class ListaFuncionario {
