@@ -2,6 +2,14 @@ package Cliente;
 
 import java.util.Scanner;
 
+/**
+ * Classe View para realizar o login de um cliente.
+ *
+ * @param lista a lista de clientes cujo qual sera localizado as credenciais de
+ *              login
+ * @return O cliente logado com as credenciais confirmadas ou null se nenhum
+ *         cliente for logado
+ */
 public class LoginCliente {
     public static Cliente login(ListaCliente lista) {
         Scanner s = new Scanner(System.in);

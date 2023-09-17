@@ -9,6 +9,12 @@ import Funcionario.Funcionario;
 import Funcionario.ListaFuncionario;
 import Funcionario.LoginFuncionario;
 
+/**
+ * Esta classe Controler é responsável por iniciar o sistema e fornecer uma
+ * interface de linha de comando para os usuários.
+ * Ela permite que os usuários acessem o sistema como clientes ou funcionários e
+ * também oferece a opção de se cadastrar como cliente.
+ */
 public class Controler {
 
     private Cliente user;
@@ -16,11 +22,19 @@ public class Controler {
     private ListaCliente listCliente;
     private ListaFuncionario listFuncs;
 
+    /**
+     * Construtor da classe Controler.
+     * Inicializa a lista de clientes e inicia o sistema.
+     */
     public Controler() {
         this.listCliente = new ListaCliente(); // Converter para carregamento de usuarios via arquivo
         this.start();
     }
 
+    /**
+     * Inicia o sistema e fornece uma interface de linha de comando para os usuários
+     * interagirem com o sistema.
+     */
     public void start() {
         Scanner s = new Scanner(System.in);
         int option;
