@@ -1,0 +1,17 @@
+<div class="p-5 d-flex justify-content-center align-items-center">
+    <div class="card col-3">
+        <h5 class="card-header">Login</h5>
+        <div class="card-body">
+            <form [formGroup]="form">
+                <label for="login" class="form-label">Login</label>
+                <input type="text" id="login" class="form-control" aria-labelledby="loginInput" formControlName="login">
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" id="senha" class="form-control" aria-labelledby="senhaInput"
+                    formControlName="senha">
+            </form>
+            <div class="mt-2">
+                <button type="button" class="btn btn-primary ms-1" (click)="login()">Entrar</button>
+            </div>
+        </div>
+    </div>
+</div>

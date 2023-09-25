@@ -1,0 +1,64 @@
+<div class="p-5" *ngIf="!showAction">
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-primary" (click)="setAction('create')">+ Novo
+            Aluguel</button>
+    </div>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th scope="col">Automovel</th>
+                <th scope="col">Status</th>
+                <th scope="col">Data Inicio</th>
+                <th scope="col">Data Fim</th>
+                <th scope="col">Valor Aluguel</th>
+                <th scope="col">Valor Caução</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let aluguel of alugueis">
+                <td>{{aluguel.automovel}}</td>
+                <td>{{aluguel.statusContrato}}</td>
+                <td>{{aluguel.dataInicio}}</td>
+                <td>{{aluguel.dataFim}}</td>
+                <td>{{aluguel.valorAluguel}}</td>
+                <td>{{aluguel.valorCaucao}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="showAction" class="p-5 d-flex justify-content-center align-items-center">
+    <div class="card col-8">
+        <h5 class="card-header">Novo Aluguel</h5>
+        <div class="card-body">
+            <form [formGroup]="form">
+                <label for="automovel" class="form-label">Automovel</label>
+                <input type="text" id="automovel" class="form-control" aria-labelledby="automovelInput"
+                    formControlName="automovel">
+                <label for="dataInicio" class="form-label">Data de Início</label>
+                <input type="date" id="dataInicio" class="form-control" aria-labelledby="dataInicioInput"
+                    formControlName="dataInicio">
+                <label for="dataInicio" class="form-label">Data de Fim</label>
+                <input type="date" id="dataFim" class="form-control" aria-labelledby="dataFimInput"
+                    formControlName="dataFim">
+                <label for="valorAluguel" class="form-label">Valor</label>
+                <input type="text" id="valorAluguel" class="form-control" aria-labelledby="valorAluguel"
+                    formControlName="valorAluguel">
+                <label for="valorCaucao" class="form-label">Valor Caução</label>
+                <input type="text" id="valorCaucao" class="form-control" aria-labelledby="valorCaucao"
+                    formControlName="valorCaucao">
+                <label for="statusContrato" class="form-label">Status</label>
+                <input type="text" id="statusContrato" class="form-control" aria-labelledby="statusContrato"
+                    formControlName="statusContrato" value="Em Andamento">
+                <label for="cliente" class="form-label">Cliente</label>
+                <select id="cliente" class="form-control" aria-labelledby="cliente" formControlName="cliente">
+                    <option *ngFor="let cliente of clientes" [value]="cliente.id">{{cliente.nome}}</option>
+                </select>
+            </form>
+
+            <div class="mt-2">
+                <button type="button" class="btn btn-secondary" (click)="switchAction()">Fechar</button>
+                <button type="button" class="btn btn-primary ms-1" (click)="salvar()">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
